@@ -29,11 +29,38 @@ tiap tiap kotak nya disebut sebagai simpul/node, dan semuanya berada di dalam se
 - DOM dapat dimanipulasi(dibuat,diubah,dihapus) menggunakan javascript. 
 
 ## DOM TREE
+
+### Tipe Tipe Node 
+- **Elemen**
+- Attribute
+- **Text**
+- CData Section
+- Entity Reference
+- Entity
+- Processing Instruction
+- Comment
+- **Document**
+- Document Type
+- Document Fragment
+- Notation
+
 tiap tiap node pada DOM Tree punya tipe yang berbeda, yaitu Elemen, Text, Document, dan banyak lainnya.
 
 ![tipe node](images/tipe%20node.png)
 
-### NodeList & HTMLCOllection
+### NodeList & HTMLCollection
+salah satu simpul di bawah... yang manapun... itu kita sebut sebagai node. 
+
+![node](images/node.png)
+
+jika kita memilih lebih dari satu node, itu kita sebut dengan nodelist, tidak peduli tipe node nya apa.
+
+![nodelist](images/nodelist.png)
+
+sedangkan HTMLCollection adalah kumpulan node khusus yang tipenya element HTML saja
+
+![htmlcollection](images/htmlcollection.png)
+
 - Keduanya merupakan kumpulan node
 - Strukturnya mirip array
 - **nodeList** dapat berisi node apapun, sedangkan **HTMLCollection** harus berisi elemen HTML

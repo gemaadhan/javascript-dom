@@ -242,3 +242,32 @@ p.style.color = "white";
 ```
 
 ![noderoot](images/noderoot.png)
+
+## DOM Manipulation
+
+### Method untuk Manipulasi Elemen
+- element.innerHTML
+- element.style.<property>
+- element.setAttribute()
+- element.classList
+- dan masih banyak lagi
+
+### element.innerHTML
+---
+dengan innerHTML kita bisa menambahkan apapun ke dalam tag HTML yang kita seleksi, termasuk tag HTML lain. 
+
+```js
+const sectionA = document.querySelector("section#a");
+sectionA.innerHTML = "Hallo Bro"
+```
+
+![innerHTML](images/innerHTML.png)
+
+### element.style.propertiCSS
+
+```js
+const judul = document.querySelector("#judul");
+judul.style.color = "lightblue";
+// jika lebih dari satu kata, gunakan CamelCasing
+judul.style.backgroundColor = "Salmon";
+```

@@ -75,3 +75,70 @@ sedangkan HTMLCollection adalah kumpulan node khusus yang tipenya element HTML s
   - children : child node yang bertipe elemen html . 
   - sibling : child node yang memiliki parent yang sama 
   - descendants : child node nya child
+
+#### querySelector() 
+---
+kembaliannya adalah elemen
+```js
+const p4 = document.querySelector("#b p");
+```
+
+![querySelector_1](images/querySelector_1.png)
+
+```js
+const p4 = document.querySelector("#b p");
+p4.style.color = "green";
+p4.style.fontSize = "30px";
+
+const li2 = document.querySelector("#b ul li:nth-child(2)");
+li2.style.backgroundColor = "orange";
+```
+
+![querySelector_2](images/querySelector_2.png)
+
+karena hanya menghasilkan sebuah elemen, kode seperti berikut hanya akan men target elemen pertamanya saja jika memang elemen nya ada banyak.
+
+```js
+const p = document.querySelector("p");
+p.innerHTML = "ini diubah melalui javascript";
+```
+
+![](images/querySelector_4.png)
+
+#### querySelectorAll()
+---
+akan mengembalikan nodeList
+
+```js
+const p = document.querySelectorAll("p");
+```
+
+![](images/querySelectorAll_1.png)
+
+```js
+const p = document.querySelectorAll("p");
+
+for (let i = 0; i < p.length; i++) {
+  p[i].style.backgroundColor = "lightblue";
+}
+```
+
+![querySelectorAll_2](images/querySelectorAll_2.png)
+
+### Bagaimana Memilih Selector ?
+
+- kalau elemen nya punya Id gunakan getElementById();
+- kalau elemennya punya class gunakan getElementsByClassName()
+- kalau tidak boleh merubah struktur html(seperti nambahin id / class), gunakan querySelector() atau querySelectorAll()
+- dari sisi performance, method tercepat adalah getElementById() dan getElementsByTagName()
+
+### Mengubah Node Root
+```js
+const sectionb = document.getElementById("b");
+const p = sectionb.querySelector("p");
+p.style.backgroundColor = "salmon";
+p.style.color = "white";
+```
+
+![querySelectorAll_3](images/querySelectorAll_3.png)
+

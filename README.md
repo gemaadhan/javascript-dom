@@ -149,7 +149,7 @@ for (let i = 0; i < p.length; i++) {
 }
 ```
 
-![](images/getElementsByTagName_4.png)
+![getElementsByTagName_4](images/getElementsByTagName_4.png)
 
 getElementsByTagName() akan selalu mengembalikan HTMLCollection(array), maka jika anggota array nya cuma 1 pun, kita tetap harus mengaksesnya dengan indeks.
 
@@ -175,4 +175,70 @@ const p1 = document.getElementsByClassName("p1");
 p1[0].innerHTML = "ini diubah menggunakan getElementByClassName";
 ```
 
-![](images/getElementsByTagName_7.png)
+![getElementsByTagName_7](images/getElementsByTagName_7.png)
+
+#### querySelector() 
+---
+kembaliannya adalah elemen
+```js
+const p4 = document.querySelector("#b p");
+```
+
+![querySelector_1](images/querySelector_1.png)
+
+```js
+const p4 = document.querySelector("#b p");
+p4.style.color = "green";
+p4.style.fontSize = "30px";
+
+const li2 = document.querySelector("#b ul li:nth-child(2)");
+li2.style.backgroundColor = "orange";
+```
+
+![querySelector_2](images/querySelector_2.png)
+
+karena hanya menghasilkan sebuah elemen, kode seperti berikut hanya akan men target elemen pertamanya saja jika memang elemen nya ada banyak.
+
+```js
+const p = document.querySelector("p");
+p.innerHTML = "ini diubah melalui javascript";
+```
+
+![querySelector_4](images/querySelector_4.png)
+
+#### querySelectorAll()
+---
+akan mengembalikan nodeList
+
+```js
+const p = document.querySelectorAll("p");
+```
+
+![querySelectorAll_1](images/querySelectorAll_1.png)
+
+```js
+const p = document.querySelectorAll("p");
+
+for (let i = 0; i < p.length; i++) {
+  p[i].style.backgroundColor = "lightblue";
+}
+```
+
+![querySelectorAll_2](images/querySelectorAll_2.png)
+
+### Bagaimana Memilih Selector ?
+
+- kalau elemen nya punya Id gunakan getElementById();
+- kalau elemennya punya class gunakan getElementsByClassName()
+- kalau tidak boleh merubah struktur html(seperti nambahin id / class), gunakan querySelector() atau querySelectorAll()
+- dari sisi performance, method tercepat adalah getElementById() dan getElementsByTagName()
+
+### Mengubah Node Root
+```js
+const sectionb = document.getElementById("b");
+const p = sectionb.querySelector("p");
+p.style.backgroundColor = "salmon";
+p.style.color = "white";
+```
+
+![noderoot](images/noderoot.png)

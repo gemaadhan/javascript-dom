@@ -114,3 +114,49 @@ ul.insertBefore(liBaru, li2);
 
 ![DOM-Manipulation-2-insert-before](images/DOM-Manipulation-2-insert-before.png)
 
+### Remove Child 
+pertama kita harus tau parent nya, kemudian kita tangkap elemen nya.
+
+```js
+const link = document.getElementsByTagName("a")[0];
+sectionA.removeChild(link);
+```
+
+![DOM-Manipulation-2-remove-child](images/DOM-Manipulation-2-remove-child.png)
+
+### Replace Child
+sebagai contoh kita akan mereplace elemen "paragraph 4" dengan h2.
+
+```js
+const sectionB = document.getElementById("b");
+const p4 = sectionB.querySelector("p");
+
+//bikin elemen
+const h2Baru = document.createElement("h2");
+
+//buat isinya
+const texth2Baru = document.createTextNode("Judul Baru");
+
+//masukkan isi kedalam elemen
+h2Baru.appendChild(texth2Baru);
+
+sectionB.replaceChild(h2Baru, p4);
+```
+
+![DOM-Manipulation-2-replace-child](images/DOM-Manipulation-2-replace-child.png)
+
+
+kita tandai elemen yang kita ganti dengan warna ijo
+```js
+pBaru.style.backgroundColor = "lightgreen";
+liBaru.style.backgroundColor = "lightgreen";
+h2Baru.style.backgroundColor = "lightgreen";
+```
+
+### Method Lainnya Untuk Memanipulasi Node
+- parentNode.append()
+- parentNode.prepend()
+- childNode.before()
+- childNode.after()
+- childNode.remove()
+- childNode.replaceWith()

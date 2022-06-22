@@ -6,14 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Latihan DOM</title>
   <style>
+
+/* untuk meng akali body nya biar full, karena kalo ga height bodynya mengikuti kontentnnya */
+    html,body{
+      height: 100%;
+    }
     body{
       text-align: center;
+    }
+    .biru-muda {
+        background-color : lightblue;
+    }
+
+    .kotak {
+      width: 25px;
+      height: 25px;
+      margin: 10px auto;
+    }
+
+    .merah {
+      background-color: red;
+    }
+    .hijau {
+      background-color: green;
+    }
+    .biru {
+      background-color: blue;
     }
   </style>
 </head>
 <body>
   <h2>Latihan DOM</h2>
-  <button>Tombol</button>
+  <button type="button" id="tUbahWarna">Ubah Warna</button>
+
+  <br></br>
+
+  <div class="kotak merah"></div>
+  <input type="range" name="sMerah" min="1" max="255">
+
+  <div class="kotak hijau"></div>
+  <input type="range" name="sHijau" min="1" max="255">
+
+  <div class="kotak biru"></div>
+  <input type="range" name="sBiru" min="1" max="255">
 
   <script src="script.js"></script>
 </body>

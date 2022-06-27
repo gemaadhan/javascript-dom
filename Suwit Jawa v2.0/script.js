@@ -63,6 +63,25 @@ function getHasil(comp, player) {
 //   info.innerHTML = hasil;
 // });
 
+// Membuat Fungsi Putar pada computer
+// menggunakan Timing
+function putar() {
+  const imgComputer = document.querySelector(".img-komputer");
+  const gambar = ["gajah", "semut", "orang"];
+  let i = 0;
+  const waktuMulai = new Date().getTime(); // get waktu sekarang
+  // untuk melakukan sesuatu secara berulang ulang selama internal waktu tertentu
+  // setiap 100 ms/ 0,1 detik lakukan fungsi
+  setInterval(function () {
+    if (new Date().getTime() - waktuMulai > 1000) {
+      clearInterval;
+      return;
+    }
+    imgComputer.setAttribute("src", "img/" + gambar[i++] + ".png");
+    if (i == gambar.length) i = 0;
+  }, 100);
+}
+
 // kita buat kode yang lebih efektif
 // kita seleksi semua img
 const pilihan = document.querySelectorAll("li img");
@@ -71,11 +90,16 @@ pilihan.forEach(function (pil) {
     const pilihanComputer = getPilihanComputer();
     const pilihanPlayer = pil.className;
     const hasil = getHasil(pilihanComputer, pilihanPlayer);
-    //kita ganti gambar nya si komputer
-    const imgComputer = document.querySelector(".img-komputer");
-    imgComputer.setAttribute("src", "img/" + pilihanComputer + ".png");
-    //kita tampilkan hasilnya
-    const info = document.querySelector(".info");
-    info.innerHTML = hasil;
+
+    putar();
+
+    setTimeout(function () {
+      //kita ganti gambar nya si komputer
+      const imgComputer = document.querySelector(".img-komputer");
+      imgComputer.setAttribute("src", "img/" + pilihanComputer + ".png");
+      //kita tampilkan hasilnya
+      const info = document.querySelector(".info");
+      info.innerHTML = hasil;
+    }, 1000);
   });
 });

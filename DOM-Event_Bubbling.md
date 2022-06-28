@@ -75,7 +75,7 @@ e.stopPropagation();
 ```
 
 ### MEMANFAATKAN EVENT BUBBLING AGAR KODE LEBIH EFFISIEN
-dengan menyimpan event di pembungkus nya dalam hal ini kontainer, nanti eventnya bisa tau kita ngeklik apa di dalam container.
+dengan menyimpan event di pembungkus nya dalam hal ini kontainer, nanti eventnya bisa tau kita ngeklik apa di dalam container. teknik ini disebut event delegation
 ```js
 const container = document.querySelector(".container");
 

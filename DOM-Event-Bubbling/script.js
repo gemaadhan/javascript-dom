@@ -15,8 +15,13 @@
 //   });
 // });
 
-const container = document.querySelector(".container");
+// const container = document.querySelector(".container");
+const body = document.getElementsByTagName("BODY")[0];
 
-container.addEventListener("click", function (e) {
-  console.log(e.target);
+// container.addEventListener("click", function (e) {
+body.addEventListener("click", function (e) {
+  if (e.target.className == "close") {
+    e.target.parentElement.style.display = "none";
+    e.stopPropagation();
+  }
 });

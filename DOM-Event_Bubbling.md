@@ -5,7 +5,7 @@ ketika kita memberikan sebuah event pada element, event tersebut ikut berlaku ke
 <!DOCTYPE html>
 <html>
 <head>
-    <title>DOM Traversal</title>
+    <title>DOM Event Bubbling</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -72,4 +72,17 @@ alert("udah tak hapus og");
 e.preventDefault();
 e.stopPropagation();
 ...
+```
+
+### MEMANFAATKAN EVENT BUBBLING AGAR KODE LEBIH EFFISIEN
+dengan menyimpan event di pembungkus nya dalam hal ini kontainer, nanti eventnya bisa tau kita ngeklik apa di dalam container.
+```js
+const container = document.querySelector(".container");
+
+container.addEventListener("click", function (e) {
+  if (e.target.className == "close") {
+    e.target.parentElement.style.display = "none";
+    e.stopPropagation();
+  }
+});
 ```

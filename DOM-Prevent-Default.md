@@ -5,7 +5,7 @@ adalah sebuah method yang ada di dalam object event atau e. tujuaanya untuk meng
 <!DOCTYPE html>
 <html>
 <head>
-    <title>DOM Traversal</title>
+    <title>DOM Prevent Default</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
